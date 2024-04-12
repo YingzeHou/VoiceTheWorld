@@ -1,17 +1,19 @@
-function navigateTo(page) {
+function navigateTo(page, text) {
     if (page === 'CameraPage') {
         window.location.href = '/camera.html'; 
     } else if (page === 'VideoPage') {
         window.location.href = '/video.html';  
     }
+    speakInstructions(text);
 }
 
-function speakInstructions() {
+function speakInstructions(text) {
     const msg = new SpeechSynthesisUtterance();
-    msg.text = "Click on left half of screen to trigger camera mode, right half to trigger video mode";
+    msg.text = text
     msg.lang = 'en-US'; // Set language
     window.speechSynthesis.speak(msg);
 }
+
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
@@ -22,6 +24,7 @@ recognition.maxAlternatives = 1;
 
 const voiceCommand = document.getElementById('voice-command');
 voiceCommand.addEventListener('click', () => {
+    speakInstructions('Listening to command');
     recognition.start();
     voiceCommand.classList.replace('fa-microphone', 'fa-record-vinyl')
     voiceCommand.classList.toggle('listening')
@@ -30,6 +33,9 @@ voiceCommand.addEventListener('click', () => {
 recognition.onresult = (event) => {
     voiceCommand.classList.remove('listening');
     voiceCommand.classList.replace('fa-record-vinyl', 'fa-microphone')
+    const last = event.results.length - 1;
+    const command = event.results[last][0].transcript.toLowerCase();
+    console.log(command)
 }
 recognition.onspeechend = () => {
     recognition.stop();

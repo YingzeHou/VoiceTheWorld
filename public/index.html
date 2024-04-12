@@ -9,19 +9,24 @@
 </head>
 <body>
     <div class="container">
-        <header role="banner" onclick="speakInstructions()">
+        <header role="banner" onclick="speakInstructions('Click on left half of screen to trigger camera mode, right half to trigger video mode')">
             <h1>VoiceTheWorld</h1>
         </header>
         <main>
-            <div class="half left" id="cameraDiv" onclick="navigateTo('CameraPage')">
+            <div class="half left" id="cameraDiv" onclick="navigateTo('CameraPage', 'Go to camera mode')">
                 <i class="fas fa-camera"></i>
             </div>
-            <div class="half right"id="videoDiv" onclick="navigateTo('VideoPage')">
+            <div class="half right"id="videoDiv" onclick="navigateTo('VideoPage', 'Go to video mode')">
                 <i class="fas fa-video"></i> 
             </div>
         </main>
-        <div class="footer">
+        <div class="voice">
             <i class="fas fa-microphone" id="voice-command"></i>
+        </div>
+        <div class="footer">
+            <i class="fas fa-circle-question mini"></i>
+            <i class="fas fa-cog mini"></i>
+            <i class="fas fa-user mini"></i>
         </div>
         <script src="script.js"></script>
     </div>

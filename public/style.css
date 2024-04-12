@@ -13,34 +13,48 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(28, 28, 28);
+    background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); 
-    color:white
+    color:black
 }
 header {
     display: flex;
     flex: 0.2;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
     cursor: pointer;
+    background-color:#002120;
+    color:white;
+    margin-bottom: 10px;
 }
 
 main {
-    flex: 1;  /* Takes up all available space */
-    display: flex;  /* Uses flexbox to split the content */
+    flex: 0.8;
+    display: flex;
     width: 100%;
-    bottom: 0;
-    background-color: black;
+    margin-bottom: 10px;
 }
 
-.footer {
+.voice {
+    width: 95%;
     flex: 0.2;
+    background-color: rgb(100, 100, 100);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 20px;
+
+}
+.footer {
+    flex: 0.1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     width: 100%;
-    cursor: pointer;
+    background-color: #002120;
 }
 
 .half {
@@ -50,6 +64,9 @@ main {
     justify-content: center;
     cursor: pointer;
     height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
 }
 
 .left {
@@ -63,6 +80,12 @@ main {
 .fas {
     font-size: 85px; /* Adjust the size of the icon */
     display: block; /* Ensures the icon is centered if needed */
+    color: white;
+    cursor: pointer;
+}
+
+.mini {
+    font-size: 30px;
 }
 
 #voice-command.listening {
