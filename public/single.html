@@ -10,14 +10,24 @@
 <body>
     <div class="container">
         <header>
-            <h1>Camera </h1>
+            <h1>Single </h1>
         </header>
         <main>
-            <div class="half left" onclick="navigateTo('SinglePage', 'Go to single image mode')">
-                <i class="fas fa-image"></i>
+            <button id="startCamera">Take Photo</button>
+
+            <div class="webcamPage" id="takeWebcam" style="display: none;">
+                <video id="singleWebcam">Video stream not available.</video>
+                <button id="snap">Take Photo</button>
             </div>
-            <div class="half right" onclick="navigateTo('PanoramaPage', 'Go to panoramic mode')">
-                <i class="fas fa-panorama"></i> 
+            <div class="webcamPage" id="viewWebcam" style="display: none;">
+                <canvas id="canvas"> </canvas>
+                <!-- <div class="output">
+                    <img id="photo" alt="The screen capture will appear in this box." />
+                </div> -->
+                <div class="actionGroup">
+                    <button id="redo">Retake</button>
+                    <button id="done">Done</button>
+                </div>  
             </div>
         </main>
         <div class="voice">

@@ -91,3 +91,79 @@ main {
 #voice-command.listening {
     color: #f44336;
 }
+
+
+/**
+For Single page
+**/
+
+:is(#singleWebcam, #canvas) {
+    background-color: #002120;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block; 
+    width: 95%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.webcamPage {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.actionGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#done {
+    background-color: black !important;
+    font-weight: 900;
+}
+:is(#redo, #done) {
+    background-color: #254D4C;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    padding:20px
+}
+
+:is(#snap) {
+    background-color: #254D4C;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block; 
+    width: 95%; 
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px 30px;
+    font-size: 60px;
+}  
+
+#startCamera {
+    padding: 15px 30px;
+    background-color:#254D4C;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: block; 
+    width: 95%; 
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+}
