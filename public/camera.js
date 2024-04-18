@@ -4,6 +4,9 @@ function navigateTo(page, text) {
     } else if (page === 'PanoramaPage') {
         window.location.href = '/panoramic.html';  
     }
+    else if(page === 'HomePage') {
+        window.location.href = '/index.html';  
+    }
     speakInstructions(text);
 }
 
