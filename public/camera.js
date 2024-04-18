@@ -65,7 +65,6 @@ function setUpWebcam(width, height) {
         const data = canvas.toDataURL("image/png");
         photo.setAttribute("src", data);
     }
-
     function takepicture() {
         const context = canvas.getContext("2d");
         if (width && height) {
@@ -92,7 +91,51 @@ function setUpWebcam(width, height) {
         false,
     );
 }
+async function generateResp(data) {
+    document.getElementById('loadingIndicator').style.display = 'flex';
 
+    /**
+     * Mock Response to make sure we don't waste a lot of money
+     */
+    setTimeout(() => {
+        document.getElementById('loadingIndicator').style.display = 'none';
+        const response = 'This is just a mock response, since I do not want to waste real money to create AI generated responses everytime I test this interface';
+        console.log(data);
+        document.getElementById("myModal").style.display = 'block';
+        document.getElementById("modalText").innerHTML=response;
+        speakInstructions(response);
+    }, "1000");
+
+    /**
+     * Uncomment the below section to use True AI response
+     */
+    // try{
+    //     const response = await fetch(
+    //         'https://noggin.rea.gent/hurt-sturgeon-7680',
+    //         {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             Authorization: 'Bearer rg_v1_sgqulc8yhsdsgl25wfglsutz2wfpfjr9kgpx_ngk',
+    //         },
+    //         body: JSON.stringify({
+    //             // fill variables here.
+    //             // You can use an external URL or a data URL here.
+    //             "image": data,
+    //         }),
+    //         }
+    //     ).then(response => response.text());
+    //     document.getElementById("myModal").style.display = 'block';
+    //     document.getElementById("modalText").innerHTML=response;
+    // }
+    // catch(error) {
+    //     console.error('An error occurred:', error);
+    // }
+    // finally {
+    //     document.getElementById('loadingIndicator').style.display = 'none';
+    // }
+
+}
 document.getElementById('startCamera').addEventListener('click', function() {
 
     const width = 420; // We will scale the photo width to this
@@ -109,3 +152,24 @@ document.getElementById('redo').addEventListener('click', function() {
     viewWebcam.style.display = "none";
     setUpWebcam(width, height);
 });
+
+document.getElementById('done').addEventListener('click', function() {
+    singleImg = localStorage.getItem('singleImg');
+    generateResp(singleImg);
+});
+
+var modal = document.getElementById("myModal");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

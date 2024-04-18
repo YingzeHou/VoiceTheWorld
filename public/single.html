@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Single </h1>
+            <h1>Single-Mode</h1>
         </header>
         <main>
             <button id="startCamera">Take Photo</button>
@@ -30,6 +30,18 @@
                 </div>  
             </div>
         </main>
+        <div id="loadingIndicator" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner"></div>
+        </div>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id="modalText">Some text in the Modal..</p>
+            </div>
+          
+          </div>
         <div class="voice">
             <i class="fas fa-microphone" id="voice-command"></i>
         </div>
