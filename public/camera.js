@@ -3,9 +3,14 @@ function navigateTo(page, text) {
         window.location.href = '/single.html'; 
     } else if (page === 'PanoramaPage') {
         window.location.href = '/panoramic.html';  
-    }
-    else if(page === 'HomePage') {
+    } else if(page === 'HomePage') {
         window.location.href = '/index.html';  
+    } else if( page == 'rightPhoto') {
+        window.location.href = '/rightPhoto.html';
+    } else if( page == 'backPhoto') {
+        window.location.href = '/backPhoto.html';
+    } else if (page == 'leftPhoto') {
+        window.location.href = '/leftPhoto.html';
     }
     speakInstructions(text);
 }
@@ -176,3 +181,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// function initiateCameraSetup() {
+//     document.getElementById('startCamera').click();
+// }

@@ -15,9 +15,9 @@
         
         <main class="panoramicPanel">
             <!-- Begin Sequence of Photos -->
-            <div class="frontPhoto">
+            <div class="leftPhoto">
                 <header>
-                    <h1>Front Photo</h1>
+                    <h1>Left Photo</h1>
                 </header>
                 <main>
                     <button id="startCamera">Take Photo</button>
@@ -33,8 +33,8 @@
                         </div> -->
                         <div class="actionGroup">
                             <button id="redo">Retake</button>
-                            <button id="next" onclick="navigateTo('rightPhoto', 'Go to next page')">Next</button>
-                        </div>  
+                            <button id="done">Done</button>
+                        </div> 
                     </div>
                 </main>
                 <div id="loadingIndicator" class="loading-overlay" style="display: none;">
@@ -53,22 +53,6 @@
                     <i class="fas fa-microphone" id="voice-command"></i>
                 </div> -->
             </div>
-            <!--
-            <div id="frontPanel">
-                <i class="fas fa-arrow-up"></i>
-            </div>  
-            <div id="middlePanel">
-                <div id="leftPanel">
-                    <i class="fas fa-arrow-left"></i>
-                </div>
-                <div id="rightPanel">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-            </div>
-            <div id="backPanel">
-                <i class="fas fa-arrow-down"></i>
-            </div>
-            -->
         </main>
         <!-- <div class="voice">
             <i class="fas fa-microphone" id="voice-command"></i>

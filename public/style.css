@@ -132,7 +132,12 @@ For Single page
     background-color: black !important;
     font-weight: 900;
 }
-:is(#redo, #done) {
+#next {
+    background-color: black !important;
+    color: #aaaaaa;
+    font-weight: 900;
+}
+:is(#redo, #done, #next) {
     background-color: #254D4C;
     color: white;
     border-radius: 20px;
