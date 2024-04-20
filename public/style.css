@@ -137,7 +137,7 @@ For Single page
     color: #aaaaaa;
     font-weight: 900;
 }
-:is(#redo, #done, #next) {
+:is(#redo, #done, #next, #panoramicDone) {
     background-color: #254D4C;
     color: white;
     border-radius: 20px;

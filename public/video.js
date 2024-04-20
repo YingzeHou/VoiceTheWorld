@@ -4,3 +4,9 @@ function navigateTo(page, text) {
     }
     speakInstructions(text);
 }
+function speakInstructions(text) {
+    const msg = new SpeechSynthesisUtterance();
+    msg.text = text
+    msg.lang = 'en-US'; // Set language
+    window.speechSynthesis.speak(msg);
+}

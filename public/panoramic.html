@@ -17,7 +17,7 @@
             <!-- Begin Sequence of Photos -->
             <div class="frontPhoto">
                 <header>
-                    <h1>Front Photo</h1>
+                    <h1 id="panoramicHeader">Front Photo</h1>
                 </header>
                 <main>
                     <button id="startCamera">Take Photo</button>
@@ -33,7 +33,7 @@
                         </div> -->
                         <div class="actionGroup">
                             <button id="redo">Retake</button>
-                            <button id="next" onclick="navigateTo('rightPhoto', 'Go to next page')">Next</button>
+                            <button id="next" onclick="takeNextPanoramic()">Next</button>
                         </div>  
                     </div>
                 </main>

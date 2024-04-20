@@ -99,6 +99,32 @@ function setUpWebcam(width, height) {
         false,
     );
 }
+
+function takeNextPanoramic() {
+    const dirs = ['Front', 'Right', 'Back', 'Left'];
+    const currDir = document.getElementById('panoramicHeader').innerHTML.split(' ')[0];
+    const currInd = dirs.indexOf(currDir);
+    let nextDir = dirs[(currInd+1)%4];
+    
+    const width = 420;
+    let height = 0;
+    let viewWebcam = document.getElementById('viewWebcam');
+    viewWebcam.style.display = "none";
+    setUpWebcam(width, height);
+
+    document.getElementById('panoramicHeader').innerHTML = nextDir+' Photo';
+
+    if(nextDir === 'Left') {
+        let nextBtn = document.getElementById('next');
+        nextBtn.innerHTML = 'Done';
+        nextBtn.id = 'panoramicDone';
+        nextBtn.onclick = null;
+        nextBtn.addEventListener('click', function(e) {
+            console.log('Panoramic Done');
+        })
+    }  
+}
+
 async function generateResp(data) {
     document.getElementById('loadingIndicator').style.display = 'flex';
 
