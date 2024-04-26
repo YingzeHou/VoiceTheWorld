@@ -128,7 +128,7 @@ For Single page
     justify-content: space-between;
 }
 
-#done {
+:is(#done, #panoramicDone) {
     background-color: black !important;
     font-weight: 900;
 }
@@ -137,7 +137,7 @@ For Single page
     color: #aaaaaa;
     font-weight: 900;
 }
-:is(#redo, #done, #next, #panoramicDone) {
+:is(#redo, #done, #next, #panoramicDone, #panoramicDone) {
     background-color: #254D4C;
     color: white;
     border-radius: 20px;
@@ -182,7 +182,7 @@ For Single page
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 500px; /* Location of the box */
+    padding-top: 450px; /* Location of the box */
     align-self: center;
     width: 420px; /* Full width */
     height: 900px; /* Full height */
@@ -203,7 +203,7 @@ For Single page
 }
 
 /* The Close Button */
-.close {
+:is(.close, .closePanoramic) {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -212,6 +212,13 @@ For Single page
 
 .close:hover,
 .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closePanoramic:hover,
+.closePanoramic:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -267,12 +274,13 @@ For Single page
     border-radius: 20px;
 }
 
-.panoramicPanel {
-    flex-direction: column;
-}
-
-#middlePanel {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
+#panoramicHeader {
+    position: fixed;
+    /* align-self: center; */
+    color: black;
+    top: 25px;
+    left:39%;
+    color: white;
+    font-size: 20px;
+    font-style: italic;
 }

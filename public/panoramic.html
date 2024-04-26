@@ -15,61 +15,37 @@
         
         <main class="panoramicPanel">
             <!-- Begin Sequence of Photos -->
-            <div class="frontPhoto">
-                <header>
-                    <h1 id="panoramicHeader">Front Photo</h1>
-                </header>
-                <main>
-                    <button id="startCamera">Take Photo</button>
-        
-                    <div class="webcamPage" id="takeWebcam" style="display: none;">
-                        <video id="singleWebcam">Video stream not available.</video>
-                        <button id="snap">Take Photo</button>
-                    </div>
-                    <div class="webcamPage" id="viewWebcam" style="display: none;">
-                        <canvas id="canvas"> </canvas>
-                        <!-- <div class="output">
-                            <img id="photo" alt="The screen capture will appear in this box." />
-                        </div> -->
-                        <div class="actionGroup">
-                            <button id="redo">Retake</button>
-                            <button id="next" onclick="takeNextPanoramic()">Next</button>
-                        </div>  
-                    </div>
-                </main>
-                <div id="loadingIndicator" class="loading-overlay" style="display: none;">
-                    <div class="loading-spinner"></div>
-                </div>
-                <div id="myModal" class="modal">
-        
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                      <span class="close">&times;</span>
-                      <p id="modalText">Some text in the Modal..</p>
-                    </div>
-                  
-                  </div>
-                <!-- <div class="voice">
-                    <i class="fas fa-microphone" id="voice-command"></i>
+            <h1 id="panoramicHeader">Front Photo</h1>
+
+            <button id="startCamera">Open Camera</button>
+
+            <div class="webcamPage" id="takeWebcam" style="display: none;">
+                <video id="singleWebcam">Video stream not available.</video>
+                <button id="snap">Take Photo</button>
+            </div>
+            <div class="webcamPage" id="viewWebcam" style="display: none;">
+                <canvas id="canvas"> </canvas>
+                <!-- <div class="output">
+                    <img id="photo" alt="The screen capture will appear in this box." />
                 </div> -->
+                <div class="actionGroup">
+                    <button id="redo">Retake</button>
+                    <button id="next" onclick="takeNextPanoramic()">Next</button>
+                </div>  
             </div>
-            <!--
-            <div id="frontPanel">
-                <i class="fas fa-arrow-up"></i>
-            </div>  
-            <div id="middlePanel">
-                <div id="leftPanel">
-                    <i class="fas fa-arrow-left"></i>
-                </div>
-                <div id="rightPanel">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-            </div>
-            <div id="backPanel">
-                <i class="fas fa-arrow-down"></i>
-            </div>
-            -->
         </main>
+        <div id="loadingIndicator" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner"></div>
+        </div>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id="modalText">Some text in the Modal..</p>
+            </div>
+          
+          </div>
         <!-- <div class="voice">
             <i class="fas fa-microphone" id="voice-command"></i>
         </div> -->
