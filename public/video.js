@@ -49,7 +49,6 @@ function setUpWebcam() {
                 // canvas.setAttribute("width", width);
                 // canvas.setAttribute("height", height);
                 streaming = true;
-                captureAndProcessImage();
                 startPeriodicCapture();
             }
         },
@@ -60,7 +59,7 @@ function setUpWebcam() {
 function startPeriodicCapture() {
     setInterval(() => {
         captureAndProcessImage();
-    }, 8000); // Capture every 5 seconds
+    }, 5000); // Capture every 5 seconds
 }
 
 function captureAndProcessImage() {
@@ -83,39 +82,35 @@ function captureAndProcessImage() {
 
 let count = 0;
 async function sendImageToAI(imageData) {
-    // let count = 0;
-    // setInterval(() => {
-    //     count+=1;
-    //     return "Mock Response "+count +" for the first "+(count*5)+" seconds";
-    // }, 5000); // Capture every 5 seconds
-    // count+=1;
-    // return  "Mock Response "+count +" for the first "+(count*5)+" seconds";
+    count+=1;
+    return  "Mock Response "+count +" for the first "+(count*5)+" seconds";
+
     /**
     * Uncomment the below section to use True AI response
     */
-    try{
-        // import fetch from 'node-fetch'; // for node.js
+    // try{
+    //     // import fetch from 'node-fetch'; // for node.js
 
-        const response = await fetch(
-            'https://noggin.rea.gent/applicable-salmon-5103',
-            {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer rg_v1_swl3vx2w1pbfalhf0xpa3ja77s15zzi78i7h_ngk',
-            },
-            body: JSON.stringify({
-                // fill variables here.
-                // You can use an external URL or a data URL here.
-                "image": imageData,
-            }),
-            }
-        ).then(response => response.text());
-       return response;
-    }
-    catch(error) {
-        console.error('An error occurred:', error);
-    }
+    //     const response = await fetch(
+    //         'https://noggin.rea.gent/applicable-salmon-5103',
+    //         {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             Authorization: 'Bearer rg_v1_swl3vx2w1pbfalhf0xpa3ja77s15zzi78i7h_ngk',
+    //         },
+    //         body: JSON.stringify({
+    //             // fill variables here.
+    //             // You can use an external URL or a data URL here.
+    //             "image": imageData,
+    //         }),
+    //         }
+    //     ).then(response => response.text());
+    //    return response;
+    // }
+    // catch(error) {
+    //     console.error('An error occurred:', error);
+    // }
 }
 
 document.getElementById('startCamera').addEventListener('click', function() {
