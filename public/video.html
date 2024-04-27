@@ -10,11 +10,38 @@
 <body>
     <div class="container">
         <header>
-            <h1>Video Mode</h1>
+            <h1>Live Mode</h1>
         </header>
         <main>
-            
+            <button id="startCamera">Open Camera</button>
+
+            <div class="webcamPage" id="takeWebcam" style="display: none;">
+                <video id="singleWebcam">Video stream not available.</video>
+                <textarea id="responseText" placeholder="AI response will appear here..." readonly></textarea>
+            </div>
+            <!-- <div class="webcamPage" id="viewWebcam" style="display: none;">
+                <canvas id="canvas"> </canvas>
+                <div class="actionGroup">
+                    <button id="redo">Retake</button>
+                    <button id="done" onclick="singleDone()">Done</button>
+                </div>  
+            </div> -->
         </main>
+        <div id="loadingIndicator" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner"></div>
+        </div>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id="modalText">Some text in the Modal..</p>
+            </div>
+          
+          </div>
+        <!-- <div class="voice">
+            <i class="fas fa-microphone" id="voice-command"></i>
+        </div> -->
         <div class="home" onclick="navigateTo('HomePage', 'Go to home page')">
             <i class="fas fa-solid fa-house" id="gotoHome"></i>
         </div>
