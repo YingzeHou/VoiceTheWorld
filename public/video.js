@@ -60,7 +60,7 @@ function setUpWebcam() {
 function startPeriodicCapture() {
     setInterval(() => {
         captureAndProcessImage();
-    }, 5000); // Capture every 5 seconds
+    }, 8000); // Capture every 5 seconds
 }
 
 function captureAndProcessImage() {
@@ -74,6 +74,7 @@ function captureAndProcessImage() {
     // Assume an async function sendImageToAI that sends the imageDataURL and returns a description
     sendImageToAI(imageDataURL).then(description => {
         responseText.value = description; // Display AI response in the textarea
+        speakInstructions(description);
     }).catch(error => {
         console.error("Error processing image with AI:", error);
         responseText.value = "Failed to get a response.";
@@ -87,32 +88,34 @@ async function sendImageToAI(imageData) {
     //     count+=1;
     //     return "Mock Response "+count +" for the first "+(count*5)+" seconds";
     // }, 5000); // Capture every 5 seconds
-    count+=1;
-    return  "Mock Response "+count +" for the first "+(count*5)+" seconds";
+    // count+=1;
+    // return  "Mock Response "+count +" for the first "+(count*5)+" seconds";
     /**
     * Uncomment the below section to use True AI response
     */
-    // try{
-    //     const response = await fetch(
-    //         'https://noggin.rea.gent/hurt-sturgeon-7680',
-    //         {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             Authorization: 'Bearer rg_v1_sgqulc8yhsdsgl25wfglsutz2wfpfjr9kgpx_ngk',
-    //         },
-    //         body: JSON.stringify({
-    //             // fill variables here.
-    //             // You can use an external URL or a data URL here.
-    //             "image": imageData,
-    //         }),
-    //         }
-    //     ).then(response => response.text());
-    //    return response;
-    // }
-    // catch(error) {
-    //     console.error('An error occurred:', error);
-    // }
+    try{
+        // import fetch from 'node-fetch'; // for node.js
+
+        const response = await fetch(
+            'https://noggin.rea.gent/applicable-salmon-5103',
+            {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer rg_v1_swl3vx2w1pbfalhf0xpa3ja77s15zzi78i7h_ngk',
+            },
+            body: JSON.stringify({
+                // fill variables here.
+                // You can use an external URL or a data URL here.
+                "image": imageData,
+            }),
+            }
+        ).then(response => response.text());
+       return response;
+    }
+    catch(error) {
+        console.error('An error occurred:', error);
+    }
 }
 
 document.getElementById('startCamera').addEventListener('click', function() {
