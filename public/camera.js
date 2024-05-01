@@ -151,95 +151,95 @@ function takeNextPanoramic() {
 
 async function generateRespPanoramic(front, right, back, left) {
     document.getElementById('loadingIndicator').style.display = 'flex';
-    setTimeout(() => {
-        document.getElementById('loadingIndicator').style.display = 'none';
-        const response = 'This is just a mock response. On your front, there is a wall; on your left, there is a chair; On your back, there is a table; On your left, there is a bed';
-        // console.log(data);
-        document.getElementById("myModal").style.display = 'block';
-        document.getElementById("modalText").innerHTML=response;
-        speakInstructions(response);
-    }, "1000");
+    // setTimeout(() => {
+    //     document.getElementById('loadingIndicator').style.display = 'none';
+    //     const response = 'This is just a mock response. On your front, there is a wall; on your left, there is a chair; On your back, there is a table; On your left, there is a bed';
+    //     // console.log(data);
+    //     document.getElementById("myModal").style.display = 'block';
+    //     document.getElementById("modalText").innerHTML=response;
+    //     speakInstructions(response);
+    // }, "1000");
 
     /**
      * Uncomment the below section to use True AI response
      */
-    // try{
-    //     // import fetch from 'node-fetch'; // for node.js
+    try{
+        // import fetch from 'node-fetch'; // for node.js
 
-    //     const response = await fetch(
-    //         'https://noggin.rea.gent/accurate-mule-3691',
-    //         {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             Authorization: 'Bearer rg_v1_9vj4tndulp3kpiuvob53h7ibby1rjhpg4j0s_ngk',
-    //         },
-    //         body: JSON.stringify({
-    //             // fill variables here.
-    //             // You can use an external URL or a data URL here.
-    //             "frontimage": front,
-    //             // You can use an external URL or a data URL here.
-    //             "rightimage": right,
-    //             // You can use an external URL or a data URL here.
-    //             "backimage": back,
-    //             // You can use an external URL or a data URL here.
-    //             "leftimage": left,
-    //         }),
-    //         }
-    //     ).then(response => response.text());
-    //     document.getElementById("myModal").style.display = 'block';
-    //     document.getElementById("modalText").innerHTML=response;
-    //     speakInstructions(response);
-    // }
-    // catch(error) {
-    //     console.error('An error occurred:', error);
-    // }
-    // finally {
-    //     document.getElementById('loadingIndicator').style.display = 'none';
-    // }
+        const response = await fetch(
+            'https://noggin.rea.gent/accurate-mule-3691',
+            {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer rg_v1_9vj4tndulp3kpiuvob53h7ibby1rjhpg4j0s_ngk',
+            },
+            body: JSON.stringify({
+                // fill variables here.
+                // You can use an external URL or a data URL here.
+                "frontimage": front,
+                // You can use an external URL or a data URL here.
+                "rightimage": right,
+                // You can use an external URL or a data URL here.
+                "backimage": back,
+                // You can use an external URL or a data URL here.
+                "leftimage": left,
+            }),
+            }
+        ).then(response => response.text());
+        document.getElementById("myModal").style.display = 'block';
+        document.getElementById("modalText").innerHTML=response;
+        speakInstructions(response);
+    }
+    catch(error) {
+        console.error('An error occurred:', error);
+    }
+    finally {
+        document.getElementById('loadingIndicator').style.display = 'none';
+    }
 }
 async function generateResp(data) {
     document.getElementById('loadingIndicator').style.display = 'flex';
     /**
      * Mock Response to make sure we don't waste a lot of money
      */
-    setTimeout(() => {
-        document.getElementById('loadingIndicator').style.display = 'none';
-        const response = 'This is just a mock response, since I do not want to waste real money to create AI generated responses everytime I test this interface';
-        // console.log(data);
-        document.getElementById("myModal").style.display = 'block';
-        document.getElementById("modalText").innerHTML=response;
-        speakInstructions(response);
-    }, "1000");
+    // setTimeout(() => {
+    //     document.getElementById('loadingIndicator').style.display = 'none';
+    //     const response = 'This is just a mock response, since I do not want to waste real money to create AI generated responses everytime I test this interface';
+    //     // console.log(data);
+    //     document.getElementById("myModal").style.display = 'block';
+    //     document.getElementById("modalText").innerHTML=response;
+    //     speakInstructions(response);
+    // }, "1000");
 
     /**
      * Uncomment the below section to use True AI response
      */
-    // try{
-    //     const response = await fetch(
-    //         'https://noggin.rea.gent/hurt-sturgeon-7680',
-    //         {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             Authorization: 'Bearer rg_v1_sgqulc8yhsdsgl25wfglsutz2wfpfjr9kgpx_ngk',
-    //         },
-    //         body: JSON.stringify({
-    //             // fill variables here.
-    //             // You can use an external URL or a data URL here.
-    //             "image": data,
-    //         }),
-    //         }
-    //     ).then(response => response.text());
-    //     document.getElementById("myModal").style.display = 'block';
-    //     document.getElementById("modalText").innerHTML=response;
-    // }
-    // catch(error) {
-    //     console.error('An error occurred:', error);
-    // }
-    // finally {
-    //     document.getElementById('loadingIndicator').style.display = 'none';
-    // }
+    try{
+        const response = await fetch(
+            'https://noggin.rea.gent/hurt-sturgeon-7680',
+            {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer rg_v1_sgqulc8yhsdsgl25wfglsutz2wfpfjr9kgpx_ngk',
+            },
+            body: JSON.stringify({
+                // fill variables here.
+                // You can use an external URL or a data URL here.
+                "image": data,
+            }),
+            }
+        ).then(response => response.text());
+        document.getElementById("myModal").style.display = 'block';
+        document.getElementById("modalText").innerHTML=response;
+    }
+    catch(error) {
+        console.error('An error occurred:', error);
+    }
+    finally {
+        document.getElementById('loadingIndicator').style.display = 'none';
+    }
 
 }
 document.getElementById('startCamera').addEventListener('click', function() {

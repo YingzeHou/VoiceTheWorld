@@ -182,7 +182,7 @@ For Single page
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 450px; /* Location of the box */
+    padding-top: 500px; /* Location of the box */
     align-self: center;
     width: 420px; /* Full width */
     height: 900px; /* Full height */
@@ -289,6 +289,7 @@ For Single page
     width: 90%;       /* Set the width of the textarea to 90% of its parent's width */
     margin: 10px auto;/* Center the textarea horizontally and add some margin for spacing */
     padding: 10px;
+    height: 120px;
     display: block;
     font-size: 18px;
 }
