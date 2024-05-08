@@ -233,6 +233,7 @@ async function generateResp(data) {
         ).then(response => response.text());
         document.getElementById("myModal").style.display = 'block';
         document.getElementById("modalText").innerHTML=response;
+        speakInstructions(response)
     }
     catch(error) {
         console.error('An error occurred:', error);
